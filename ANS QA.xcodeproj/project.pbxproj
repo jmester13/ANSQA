@@ -21,6 +21,7 @@
 		22FF0F491E0AFAA8009C6CE6 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FF0F481E0AFAA8009C6CE6 /* DataService.swift */; };
 		22FF0F4D1E0C2895009C6CE6 /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FF0F4C1E0C2895009C6CE6 /* CustomImage.swift */; };
 		22FF0F4F1E0C41B1009C6CE6 /* ClientDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FF0F4E1E0C41B1009C6CE6 /* ClientDetailVC.swift */; };
+		2DFA584F6BF57AB156C5258B /* Pods_ANS_QA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C859E1DEE26680A285749AC4 /* Pods_ANS_QA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DFA584F6BF57AB156C5258B /* Pods_ANS_QA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

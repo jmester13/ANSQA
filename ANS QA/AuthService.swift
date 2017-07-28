@@ -21,11 +21,11 @@ class AuthService {
     
     
     func login(email: String, password: String, onComplete: @escaping Completion) {
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
             if error != nil {
                 print((error?._code)!)
-                if let errorCode = FIRAuthErrorCode(rawValue: (error?._code)!) {
-                    if errorCode == FIRAuthErrorCode.errorCodeUserNotFound {
+                if let errorCode = AuthErrorCode(rawValue: (error?._code)!) {
+                    if errorCode == AuthErrorCode.userNotFound {
                         self.FireBaseErrorHandler(error: error as! NSError, onComplete: onComplete)
                     }
                 } else { // all other erros
@@ -38,18 +38,18 @@ class AuthService {
     }
     
     func FireBaseErrorHandler(error: NSError, onComplete: Completion?) {
-        if  let errorCode = FIRAuthErrorCode(rawValue: error.code) {
+        if  let errorCode = AuthErrorCode(rawValue: error.code) {
             switch errorCode {
-            case .errorCodeInvalidEmail:
+            case .invalidEmail:
                 onComplete?("Invalid Email Address", nil)
                 break;
-            case .errorCodeWrongPassword:
+            case .wrongPassword:
                 onComplete?("Incorrect Password", nil)
                 break;
-            case .errorCodeEmailAlreadyInUse:
+            case .emailAlreadyInUse:
                 onComplete?("Email Already In Use", nil)
                 break;
-            case .errorCodeAccountExistsWithDifferentCredential:
+            case .accountExistsWithDifferentCredential:
                 onComplete?("Email Already In Use", nil)
                 break;
             default:
