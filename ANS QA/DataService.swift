@@ -19,11 +19,11 @@ class DataService {
         return _instance
     }
     
-    var mainRef: FIRDatabaseReference {
-        return FIRDatabase.database().reference()
+    var mainRef: DatabaseReference {
+        return Database.database().reference()
     }
     
-    var qaDataRef: FIRDatabaseReference {
+    var qaDataRef: DatabaseReference {
         return mainRef.child("qadata")
         //return mainRef.queryOrderedByKey().ref
     }
